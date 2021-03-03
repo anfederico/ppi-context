@@ -90,3 +90,8 @@ $ python ppictx.py --run \
     annotations such as *HEK (CVCL\_M624)* and *HEK293 (CVCL\_0045)*
     refer to the same cell line. Users should be aware of synonymous
     cell lines relevant to their interests and filter accordingly.
+
+## Cite
+
+Federico A, Monti S (2021) Contextualized Protein-Protein Interactions.
+*Patterns*. <https://doi.org/10.1016/j.patter.2020.100153>.
