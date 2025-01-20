@@ -8,8 +8,8 @@ def process_ppi(fh):
 
     # Extract relevant information
     df = pd.read_csv(fh, sep='\t', header=0)
-    df = df[['Gene Name Interactor A', 'Gene Name Interactor B', 'Publication Identifiers']]
-    df.columns = ['gene_a', 'gene_b', 'ids']
+    df = df[['Gene Name Interactor A', 'Gene Name Interactor B', 'Publication Identifiers', 'Confidence Value']]
+    df.columns = ['gene_a', 'gene_b', 'ids', 'confidence']
     
     return(df)
 
