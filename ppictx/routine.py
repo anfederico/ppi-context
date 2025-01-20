@@ -13,7 +13,7 @@ def process_ppi_cid(ppi, pid_cla, cla_cid):
     # For each interaction
     for i, row in ppi.iterrows():
         log = {}
-        gene_a, gene_b, ids = row['gene_a'], row['gene_b'], row['ids']
+        gene_a, gene_b, ids, confidence = row['gene_a'], row['gene_b'], row['ids'], row['confidence']
         
         # Check if publications exist
         if ids != '-':
@@ -34,7 +34,8 @@ def process_ppi_cid(ppi, pid_cla, cla_cid):
                             data.append(ppictx.make_entry(id=i, 
                                                           gene_a=gene_a, 
                                                           gene_b=gene_b, 
-                                                          pid=pid, 
+                                                          pid=pid,
+                                                          confidence=confidence,
                                                           cell_name=cid['ID'], 
                                                           cell_category=cid['CA'],
                                                           cell_sex=cid['SX'],
@@ -53,7 +54,7 @@ def process_ppi_cid(ppi, pid_cla, cla_cid):
     if not os.path.exists(dir):
         os.makedirs(dir)
     df_context = pd.DataFrame(data)
-    df_context = df_context[['id', 'gene_a', 'gene_b', 'pid', 'cell_name', 'cell_category', 'cell_sex', 'cell_species']]
+    df_context = df_context[['id', 'gene_a', 'gene_b', 'pid', 'confidence', 'cell_name', 'cell_category', 'cell_sex', 'cell_species']]
     df_context.to_csv(os.path.join(dir, 'PPI-Context.txt'), sep='\t', index=False)
 
     return df_context, logs
