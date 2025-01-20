@@ -3,7 +3,7 @@ from urllib.request import urlretrieve
 
 # Downloading raw data
 URL_HIPPIE      = 'http://cbdm-01.zdv.uni-mainz.de/~mschaefer/hippie/HIPPIE-current.mitab.txt'
-URL_PUBTATOR    = 'ftp://ftp.ncbi.nlm.nih.gov/pub/lu/PubTatorCentral/cellline2pubtatorcentral.gz'
+URL_PUBTATOR    = 'ftp://ftp.ncbi.nlm.nih.gov/pub/lu/PubTator3/cellline2pubtator3.gz'
 URL_CELLOSAURUS = 'ftp://ftp.expasy.org/databases/cellosaurus/cellosaurus.txt'
 
 def download_data():
